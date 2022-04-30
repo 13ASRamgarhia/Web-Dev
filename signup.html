@@ -21,7 +21,7 @@
                 <div class="form-control">
                     <label for="username">Enter Username</label>
                     <input type="text" id="userS" name="username">
-                    <small>Error Message</small>
+                    <small id="s1">Error Message</small>
                 </div>
                 <div class="form-control">
                     <label for="emailId">Enter Email</label>
@@ -43,8 +43,8 @@
                     <input type="password" id="cnfrm-passS" name="condirm-password">
                     <small>Error Message</small>
                 </div>
-            
-                <input type="submit" id="signup-btn" value="Sign Up">
+                
+                <button id="signup-btn" onclick="checkInputs();">Sign Up</button>
                 <div class="back-to-login">
                     <a href="home.html" id="back-to-login">Back to login</a>
                 </div>
