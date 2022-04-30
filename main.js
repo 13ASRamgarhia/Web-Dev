@@ -1,41 +1,28 @@
-const form = document.getElementById("signupform");
-const username = document.getElementById("userS");
-const emailID = document.getElementById("emailS");
-const phoneNumber = document.getElementById("phoneS");
-const password = document.getElementById("passS");
-const cnfrm_pass = document.getElementById("cnfrm-passS");
-
-form.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    checkInputs();
-});
-
 function checkInputs(){
-    const usernameValue = username.value.trim();
-    const emailIDValue = emailID.value.trim();
-    const phoneNumberValue = phoneNumber.value.trim();
-    const passwordValue = password.value.trim();
-    const cnfrm_passValue = cnfrm_pass.value.trim();
+    const form = document.getElementById("signupform").value;
+    const username = document.getElementById("userS").value;
+    const emailID = document.getElementById("emailS").value;
+    const phoneNumber = document.getElementById("phoneS").value;
+    const password = document.getElementById("passS").value;
+    const cnfrm_pass = document.getElementById("cnfrm-passS").value;
 
-    if(usernameValue === ""){
-        setErrorFor(username, "Username cannot be empty");
+    if(username == ""){
+        setErrorFor("Username cannot be empty");
     }
     else{
         setSuccessFor(username);
     }
 }
 
-function setErrorFor(input,message){
-    const formControl = input.parentElement;
-    const small = formControl.querySelector("small");
-
-    small.innerText = message;
-
-    formControl.className = "form-control error";
+function setErrorFor(message){
+    var small = document.getElementById("s1");
+    small.textContent = message;
+    small.style.visibility = "visible";
+    form.preventDefaults();
 }
 
 function setSuccessFor(input){
-    const formControl = input.parentElement;
+    let formControl = input.parentElement;
     formControl.className = "form-control success";
 }
+
